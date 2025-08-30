@@ -1,1 +1,1 @@
-# Livewire 3
+# Livewire 3 com Laravel 12
