@@ -16,6 +16,11 @@
     @foreach ($tweets as $tweet)
         <h2>{{$tweet->user->name}}</h2>
         <p>{{$tweet->content}}</p>
+        @if ($tweet->likes->count())
+            <button wire:click.prevent="unlike({{$tweet->id}})">Unlike</button>
+        @else
+            <button wire:click.prevent="like({{$tweet->id}})">Like</button>
+        @endif
     @endforeach
     {{ $tweets->links() }}
 </div>
